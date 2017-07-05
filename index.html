@@ -1,130 +1,127 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Github User Info</title>
-	<link rel="stylesheet" href="build/css/vendor.css">
+    <head>
+        <title>Github User Info</title>
+        <link rel="stylesheet" href="build/css/vendor.css">
 
-	<style type="text/css">
-		/* Header */
-#header {
-	font-size: 3em;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    font-family: 'Righteous', cursive;
-    color: #f7517d;
-}
-/* Header */
+        <style type="text/css">
+            /* Header */
+            #header {
+                font-size: 3em;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                font-family: 'Righteous', cursive;
+                color: #f7517d;
+            }
+            /* Header */
 
-/* Form */
-form {
-	padding-top: 100px;
-	padding-bottom: 100px;
-}
+            /* Form */
+            form {
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
 
-label {
-	font-size: 1.3em;
-	color: #ffffff;
-}
+            label {
+                font-size: 1.3em;
+                color: #ffffff;
+            }
 
-#name {
-	height: 50px;
-	border-radius: 3px;
-	font-size: 1.5em;
-	text-align: center;
-}
+            #name {
+                height: 50px;
+                border-radius: 3px;
+                font-size: 1.5em;
+                text-align: center;
+            }
 
-#check {
-	height: 50px;
-	border-radius: 3px;
-	text-align: center;
-	font-size: 1.5em;
-	width: 100%;
-	border: 2px solid #f7517d;
-	padding-top: 10px
-	padding-bottom: 10px;
-	color: #f7517d;
-	background-color: #ffffff;
-}
+            #check {
+                height: 50px;
+                border-radius: 3px;
+                text-align: center;
+                font-size: 1.5em;
+                width: 100%;
+                border: 2px solid #f7517d;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                color: #f7517d;
+                background-color: #ffffff;
+            }
 
-#check:hover {
-	background-color: #f7517d;
-	color: #ffffff;
-}
-/* Form */
+            #check:hover {
+                background-color: #f7517d;
+                color: #ffffff;
+            }
+            /* Form */
 
-/* Display */
-#display {
-	width: 100%;
-	background-color: #ffd596;
-	font-size: 1.5em;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
+            /* Display */
+            #display {
+                width: 100%;
+                background-color: #ffd596;
+                font-size: 1.5em;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
 
-#results {
-	padding-bottom: 50px;
-}
+            #results {
+                padding-bottom: 50px;
+            }
 
-#displayResults {
-	margin-top: 15px;
-	background-color: #ffffff;
-	font-size: 1em;
-	padding-bottom: 15px;
-}
+            #displayResults {
+                margin-top: 15px;
+                background-color: #ffffff;
+                font-size: 1em;
+                padding-bottom: 15px;
+            }
 
-#theResults {
-	padding-top: 25px;
-	padding-bottom: 50px;
-	color: #ba0056;
-	list-style-type: none;
-}
-/* Display */
-	</style>
+            #theResults {
+                padding-top: 25px;
+                padding-bottom: 50px;
+                color: #ba0056;
+                list-style-type: none;
+            }
+            /* Display */
+        </style>
 
 
-	<script src="build/js/vendor.min.js"></script>
-	<script src="js/main-interface.js"></script>
-	<script src="js/main.js"></script>
-    <!--<script type="text/javascript" src="build/js/app.js"></script>-->
-</head>
-<body>
-    <body style="background: url('images/black.png')-webkit-background-size: cover; background-size: cover;">
+        <script src="build/js/vendor.min.js"></script>
+        <script type="text/javascript" src="build/js/app.js"></script>
+    </head>
+    <body style="background: url('images/black.png');-webkit-background-size: cover; background-size: cover;">
 
-    <div class="navbar navbar-inverse">
-        <p class="text-center" id="header">GitHub User Look-Up App</p>
-    </div>
+        <div class="navbar navbar-inverse">
+            <p class="text-center" id="header">GitHub User Look-Up App</p>
+        </div>
 
-    <div class="container">
-    	<div class="row">
-    		<div class="col-sm-3"></div>
-    		<div class="col-sm-6">
-    			<form onsubmit="return false">
-    				<div class="form-group text-center">
-    					<label for="number">Enter GitHub Username</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter Username">
-    				</div>
-    				<div class="text-center">
-    					<button class="btn" id="check">Check For User</button>
-    					<h2 id="error"></h2>
-    				</div>
-    			</form>
-    		</div>
-    		<div class="col-sm-3"></div>
-    	</div>
-    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form onsubmit="return false">
+                        <div class="form-group text-center">
+                            <label for="name">Enter GitHub Username</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter Username">
+                        </div>
+                        <div class="text-center">
+                            <button class="btn" id="check">Check For User</button>
+                            <h2 id="error"></h2>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
 
-    <div class="container" id="results">
-    	<div class="row">
-    		<div class="col-sm-2"></div>
-    		<div class="col-sm-8">
-    			<button class="btn" id="display" data-toggle="collapse" data-target="#displayResults">Display User Information</button>
-    			<div id="displayResults" class="collapse">
-    				<ul id="theResults">
-    			    </ul>
-    			</div>
-    		</div>
-    		<div class="col-sm-2"></div>
-    	</div>
-    </div>
-</body>
+        <div class="container" id="results">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <button class="btn" id="display" data-toggle="collapse" data-target="#displayResults">Display User Information</button>
+                    <div id="displayResults" class="collapse">
+                        <ul id="theResults">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </body>
 </html>
